@@ -26,4 +26,8 @@ public extension Observable {
     public func sampleLatestFrom<T>(_ sampler: Observable<T>) -> Observable<T> {
         return self.sample(sampler).withLatestFrom(sampler)
     }
+    
+    public func sampleLatestFrom<T, R>(_ sampler: T, _ resultSelector: @escaping (Element, T.E) -> R) -> Observable<R> where T: ObservableType {
+        return self.sample(sampler).withLatestFrom(sampler, resultSelector: resultSelector)
+    }
 }
