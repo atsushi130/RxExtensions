@@ -22,4 +22,8 @@ public extension Observable {
     public func asDriverIgonringError() -> Driver<Element> {
         return self.asDriver(onErrorDriveWith: .empty())
     }
+    
+    public func sampleLatestFrom<T>(_ sampler: Observable<T>) -> Observable<T> {
+        return self.sample(sampler).withLatestFrom(sampler)
+    }
 }
