@@ -12,6 +12,7 @@
 		0DEC14AC21EE30380022B7AC /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEC14AB21EE30380022B7AC /* RxBlocking.framework */; };
 		0DEC14AE21EE30400022B7AC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEC14AD21EE30400022B7AC /* RxCocoa.framework */; };
 		0DEC14B021EE304A0022B7AC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEC14AF21EE304A0022B7AC /* RxSwift.framework */; };
+		0DEC14B321EE31040022B7AC /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEC14B221EE31040022B7AC /* Observable+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0DEC14AB21EE30380022B7AC /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
 		0DEC14AD21EE30400022B7AC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
 		0DEC14AF21EE304A0022B7AC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = SOURCE_ROOT; };
+		0DEC14B221EE31040022B7AC /* Observable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				0DEC14A021EE2D660022B7AC /* RxExtensions.h */,
 				0DEC14A121EE2D660022B7AC /* Info.plist */,
+				0DEC14B221EE31040022B7AC /* Observable+.swift */,
 			);
 			path = RxExtensions;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 				TargetAttributes = {
 					0DEC149C21EE2D660022B7AC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -181,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEC14B321EE31040022B7AC /* Observable+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +308,7 @@
 		0DEC14A621EE2D660022B7AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -320,6 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.atsushi130.RxExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,6 +335,7 @@
 		0DEC14A721EE2D660022B7AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
