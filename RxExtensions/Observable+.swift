@@ -6,4 +6,11 @@
 //  Copyright © 2019年 Atsushi Miyake. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+
+public extension Observable {
+    
+    public func fill<T>( _ value: T) -> Observable<T> {
+        return self.map { _ in value }
+    }
+}
