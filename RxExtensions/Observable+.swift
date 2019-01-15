@@ -10,6 +10,10 @@ import RxSwift
 
 public extension Observable {
     
+    public var discarded: Observable<Void> {
+        return self.fill(())
+    }
+    
     public func fill<T>( _ value: T) -> Observable<T> {
         return self.map { _ in value }
     }
