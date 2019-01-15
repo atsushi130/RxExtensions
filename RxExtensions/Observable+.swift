@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 public extension Observable {
     
@@ -16,5 +17,9 @@ public extension Observable {
     
     public func fill<T>( _ value: T) -> Observable<T> {
         return self.map { _ in value }
+    }
+    
+    public func asDriverIgonringError() -> Driver<Element> {
+        return self.asDriver(onErrorDriveWith: .empty())
     }
 }
